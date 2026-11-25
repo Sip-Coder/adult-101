@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { pillars, readyLessons, starterPath, getLesson } from "@/lib/content/catalog";
 import { pillarColor } from "@/lib/pillar-color";
 
@@ -20,14 +21,14 @@ export default function HomePage() {
             <a className="button" href="#pillars">
               Browse the five pillars
             </a>
-            <a className="button secondary" href="/advisory">
+            <Link className="button secondary" href="/advisory">
               Build an advisory team
-            </a>
+            </Link>
           </div>
         </div>
         <nav className="contents" aria-label="Pillars">
           {pillars.map((pillar) => (
-            <a
+            <Link
               key={pillar.slug}
               href={`/pillars/${pillar.slug}`}
               style={{ "--pillar": pillarColor(pillar.slug) } as React.CSSProperties}
@@ -38,7 +39,7 @@ export default function HomePage() {
                 <small>{pillar.tagline}</small>
               </span>
               <em>Open</em>
-            </a>
+            </Link>
           ))}
         </nav>
       </section>
@@ -56,11 +57,11 @@ export default function HomePage() {
         </div>
         <div className="path">
           {path.map((item, index) => (
-            <a key={item.lesson.slug} href={`/lessons/${item.lesson.slug}`}>
+            <Link key={item.lesson.slug} href={`/lessons/${item.lesson.slug}`}>
               <span className="step">0{index + 1} · {item.topic.title}</span>
               <strong>{item.lesson.title}</strong>
               <span className="meta">{item.lesson.minutes} min</span>
-            </a>
+            </Link>
           ))}
         </div>
       </section>
@@ -80,7 +81,7 @@ export default function HomePage() {
               0,
             );
             return (
-              <a
+              <Link
                 key={pillar.slug}
                 className="pillar-link"
                 href={`/pillars/${pillar.slug}`}
@@ -94,7 +95,7 @@ export default function HomePage() {
                 <span className="meta">
                   {ready === 0 ? "Topics listed, lessons coming" : `${ready} course${ready === 1 ? "" : "s"} ready`}
                 </span>
-              </a>
+              </Link>
             );
           })}
         </div>
@@ -114,9 +115,9 @@ export default function HomePage() {
             </p>
           </div>
           <div>
-            <a className="button" href="/advisory">
+            <Link className="button" href="/advisory">
               See the team
-            </a>
+            </Link>
           </div>
         </div>
       </section>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { DISCLAIMER_SHORT } from "@/lib/content/disclaimer";
 
 export function SiteFooter() {
@@ -8,9 +9,9 @@ export function SiteFooter() {
           {DISCLAIMER_SHORT} Adult 101 is free to read.
         </p>
         <div className="footer-links">
-          <a href="/advisory">Advisory team</a>
-          <a href="/notes">Topic map notes</a>
-          <a href="/login">Sign in</a>
+          <Link href="/advisory">Advisory team</Link>
+          <Link href="/notes">Topic map notes</Link>
+          <Link href="/login">Sign in</Link>
         </div>
       </div>
     </footer>

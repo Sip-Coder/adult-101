@@ -11,6 +11,8 @@ export function generateStaticParams() {
   return pillars.map((pillar) => ({ slug: pillar.slug }));
 }
 
+export const dynamicParams = false;
+
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { slug } = await params;
   const pillar = getPillar(slug);
@@ -42,7 +44,7 @@ export default async function PillarPage({ params }: { params: Promise<Params> }
                 <div>
                   <h3>
                     {topic.status === "ready" ? (
-                      <a href={`/topics/${topic.slug}`}>{topic.title}</a>
+                      <Link href={`/topics/${topic.slug}`}>{topic.title}</Link>
                     ) : (
                       topic.title
                     )}
@@ -51,14 +53,14 @@ export default async function PillarPage({ params }: { params: Promise<Params> }
                   {topic.placementNote ? (
                     <p className="note">
                       {topic.placementNote}{" "}
-                      <a href="/notes">See the open questions.</a>
+                      <Link href="/notes">See the open questions.</Link>
                     </p>
                   ) : null}
                 </div>
                 {topic.status === "ready" ? (
-                  <a className="badge" href={`/topics/${topic.slug}`}>
+                  <Link className="badge" href={`/topics/${topic.slug}`}>
                     {topic.lessons.length} lessons · {topicMinutes(topic)} min
-                  </a>
+                  </Link>
                 ) : (
                   <span className="badge soon">Coming soon</span>
                 )}

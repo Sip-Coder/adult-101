@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Outfit } from "next/font/google";
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
-import { getViewer } from "@/lib/viewer";
+import { AppShell } from "@/components/app-shell";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -26,18 +24,11 @@ export const metadata: Metadata = {
     "A free hub of short lessons on money, renting, car insurance, wills, and starting a business. Education, not legal or financial advice.",
 };
 
-export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const viewer = await getViewer();
-
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${fraunces.variable} ${outfit.variable}`}>
       <body>
-        <a className="skip" href="#main">
-          Skip to content
-        </a>
-        <SiteHeader viewer={viewer} />
-        <main id="main">{children}</main>
-        <SiteFooter />
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

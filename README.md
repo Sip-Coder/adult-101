@@ -80,6 +80,14 @@ Open [http://localhost:3000](http://localhost:3000).
 
 You do not need API keys to read the site. Leave the Supabase lines in `.env.local` blank.
 
+## Preview on GitHub Pages
+
+A static export is published at [https://sip-coder.github.io/adult-101/](https://sip-coder.github.io/adult-101/).
+
+`npm run build:pages` builds that export (`output: 'export'`, `basePath` and `assetPrefix` of `/adult-101`). It does not call Supabase. Google and Apple buttons say **Not configured yet**, and the demo learner saves progress in this browser. `.github/workflows/pages.yml` uploads the `out` folder to GitHub Pages on pushes to `main`.
+
+Pages has to use **GitHub Actions** as its source. The first deploy creates the `github-pages` environment.
+
 ### What works with no keys
 
 - Home, all five pillars, topic pages, starter lessons, the advisory team page, and the topic-map notes.

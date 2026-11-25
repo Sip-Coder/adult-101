@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { signOut } from "@/lib/auth-actions";
-import { pillars } from "@/lib/content/catalog";
+import { NavLinks } from "@/components/nav-links";
 import type { Viewer } from "@/lib/viewer";
 
 export function SiteHeader({ viewer }: { viewer: Viewer }) {
@@ -12,26 +12,11 @@ export function SiteHeader({ viewer }: { viewer: Viewer }) {
           <span>Field guide</span>
         </Link>
         <nav className="nav" aria-label="Primary">
-          <details>
-            <summary>Pillars</summary>
-            <div className="nav-menu">
-              {pillars.map((pillar) => (
-                <a key={pillar.slug} href={`/pillars/${pillar.slug}`}>
-                  <span>{pillar.number}</span>
-                  <span>
-                    {pillar.title}
-                    <small>{pillar.tagline}</small>
-                  </span>
-                </a>
-              ))}
-            </div>
-          </details>
-          <a href="/advisory">Advisory team</a>
-          <a href="/progress">Progress</a>
+          <NavLinks />
           {viewer.kind === "guest" ? (
-            <a className="button" href="/login">
+            <Link className="button" href="/login">
               Sign in
-            </a>
+            </Link>
           ) : (
             <div className="account-chip">
               <p>{viewer.name}</p>
