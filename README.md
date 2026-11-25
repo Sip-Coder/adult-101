@@ -45,5 +45,17 @@ Work, career, and building something of your own.
 - **Taxes**: Personal Health, Professional Health, or split between both?
 - **Mental Health** and **Social Health** are thin with the current topics; they likely need new topics of their own.
 
+## Future section: Build Your Personal Advisory Team
+Idea from the owner: encourage learners to build a personal team of trusted professionals the same way they'd have a doctor, so they have someone to call before a big decision instead of after a mistake.
+- **Attorney:** contracts, leases, prenups, wills, trusts and estate planning, disputes
+- **CPA (Certified Public Accountant):** taxes, side hustle and business bookkeeping
+- **CFP (Certified Financial Planner):** budgeting, investing, retirement, big purchases
+- **Insurance agent or broker:** car, renters, home, and life coverage
+- **Real estate agent and mortgage lender:** renting and buying a first home
+- **Trusted mechanic:** car maintenance and repairs
+- Others to consider: banker, therapist or counselor, career mentor
+
+Planned guidance: how to find and vet each pro, what to bring to a first meeting, questions to ask, how fees work, and how to talk to them without it feeling intimidating.
+
 ## Status
 Early concept. Scope, audience, tone, and structure are being defined.
