@@ -22,6 +22,7 @@ Protecting the people you build a life with.
 - Prenups
 - Divorce basics
 - Wills, powers of attorney, and beneficiaries
+- Trust and estate planning
 
 ### 4. Social Health
 Navigating agreements and disputes with other people.
