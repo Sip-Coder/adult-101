@@ -99,9 +99,15 @@ test("demo progress round-trips and drops unknown lessons", () => {
 
 test("redirect targets stay on this site", () => {
   assert.equal(safeNext("/lessons/what-a-budget-is"), "/lessons/what-a-budget-is");
+  assert.equal(safeNext("/lessons/what-a-budget-is?from=login"), "/lessons/what-a-budget-is?from=login");
   assert.equal(safeNext("https://evil.example"), "/progress");
   assert.equal(safeNext("//evil.example"), "/progress");
   assert.equal(safeNext(null), "/progress");
+  assert.equal(safeNext("/\t/evil.example"), "/progress");
+  assert.equal(safeNext("/\n/evil.example"), "/progress");
+  assert.equal(safeNext("/%09/evil.example"), "/progress");
+  assert.equal(safeNext("/%0a/evil.example"), "/progress");
+  assert.equal(safeNext("/%7F/evil.example"), "/progress");
 });
 
 test("supabase config treats blanks and placeholders as off", () => {
